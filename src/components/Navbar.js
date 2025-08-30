@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="bg-gray-900 text-white fixed w-full top-0 left-0 shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         {/* Logo */}
-        <div className="text-2xl font-bold text-indigo-500">Omkar</div>
+        <div className="text-2xl font-bold text-indigo-500">Omkar Bondge</div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
