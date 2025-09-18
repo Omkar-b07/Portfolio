@@ -16,7 +16,7 @@ const myProjects = [
     title: "College Chatbot",
     description: "A Python-based chatbot built with Flask and a rule-based system.",
     technologies: ["Python", "Flask", "JavaScript"],
-    github: "https://github.com/your-username/college-chatbot",
+    github: "https://github.com/Omkar-b07/College_chatbot",
     image: "/images/chatbot.jpg"
   },
   {
@@ -24,7 +24,7 @@ const myProjects = [
     title: "To-Do List App",
     description: "A full-stack MERN application for managing daily tasks.",
     technologies: ["MongoDB", "Express", "React", "Node.js"],
-    github: "https://github.com/your-username/mern-todo-app",
+    github: "https://github.com/Omkar-b07/mern-todo-app",
     image:"/images/ToDoList.jpg"
   },
 
