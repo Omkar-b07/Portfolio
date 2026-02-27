@@ -13,10 +13,10 @@ const myProjects = [
   
   {
     id: 2,
-    title: "College Chatbot",
-    description: "A Python-based chatbot built with Flask and a rule-based system.",
-    technologies: ["Python", "Flask", "JavaScript"],
-    github: "https://github.com/Omkar-b07/College_chatbot",
+    title: "WellBot - Global Multilingual Wellness Assistant Chatbot",
+    description: "An AI-powered conversational assistant delivering accessible health information worldwide.",
+    technologies: ["Python", "Rasa", "SQLite", "Flask"],
+    github: "https://github.com/Omkar-b07/TeamA_WellBot",
     image: "/images/chatbot.jpg"
   },
   {
