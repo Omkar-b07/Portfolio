@@ -1,55 +1,61 @@
 import React from "react";
 
 const myProjects = [
-    {
+  {
     id: 1,
-    title: "Wonderlust",
-    description: "A travel booking web app with advanced search and authentication.",
-    technologies: ["Node.js", "Express", "MongoDB", "EJS"],
-    github: "https://github.com/Omkar-b07/Wonderlust",
-    image: "/images/Wonderlust.jpg"
-
+    title: "PublicEye",
+    shortTitle: "Civic issue tracker",
+    description: "A civic-tech platform that helps citizens report local issues and gives departments a transparent way to resolve them.",
+    technologies: ["React", "Node.js", "MongoDB", "Leaflet"],
+    github: "https://github.com/Omkar-b07/PublicEye--Public-Grievance-Civic-Issue-Tracker-System",
+    live: "https://public-eye-public-grievance-civic-i-ten.vercel.app/login",
+    type: "civic",
+    accent: "lime"
   },
-  
   {
     id: 2,
+    title: "ContextIQ",
+    shortTitle: "AI document intelligence",
+    description: "An AI-powered workspace for turning dense documents into searchable context, useful answers, and faster decisions.",
+    technologies: ["React", "Node.js", "AI", "Document search"],
+    github: "https://github.com/Omkar-b07/ContextIQ---AI-Document-Intelligence-Platform",
+    type: "context",
+    accent: "blue"
+  },
+  {
+    id: 3,
     title: "WellBot - Global Multilingual Wellness Assistant Chatbot",
     description: "An AI-powered conversational assistant delivering accessible health information worldwide.",
     technologies: ["Python", "Rasa", "SQLite", "Flask"],
     github: "https://github.com/Omkar-b07/TeamA_WellBot",
-    image: "/images/chatbot.jpg"
-  },
-  {
-    id: 3,
-    title: "To-Do List App",
-    description: "A full-stack MERN application for managing daily tasks.",
-    technologies: ["MongoDB", "Express", "React", "Node.js"],
-    github: "https://github.com/Omkar-b07/mern-todo-app",
-    image:"/images/ToDoList.jpg"
+    image: "/images/chatbot.jpg",
+    type: "wellbot",
+    accent: "orange"
   },
 
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-6 py-16">
-      <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
-      <div className="grid md:grid-cols-3 gap-8">
+    <section id="projects" className="projects-section content-section">
+      <div className="section-heading"><span className="section-label">02</span><h2>Selected work</h2><span className="heading-note">Real products, real problems</span></div>
+      <div className="projects-grid">
         {myProjects.map((project) => (
-          <div key={project.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300">
-            <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-            <div className="p-6">
-              <h3 className="text-2xl font-semibold mb-3 text-blue-600">{project.title}</h3>
-              <p className="text-gray-700 mb-4">{project.description}</p>
-              <p className="text-sm text-gray-500 mb-4">Tech: {project.technologies.join(', ')}</p>
-              <div className="flex gap-4">
-                <a href={project.github} className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700">GitHub</a>
-                {project.live && (
-                  <a href={project.live} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500">Live Demo</a>
-                )}
+          <article key={project.id} className="project-card">
+            {project.image ? <img src={project.image} alt={project.title} className="project-image" /> : <div className={`project-visual ${project.type}`} aria-hidden="true">
+              {project.type === "civic" ? <><div className="visual-map"><span className="map-route" /><b className="map-pin pin-a" /><b className="map-pin pin-b" /><b className="map-pin pin-c" /></div><div className="visual-panel"><span>PUBLIC EYE</span><strong>12 active issues</strong><small>Roads &amp; infrastructure</small></div></> : <><div className="doc-lines"><span /><span /><span /><span /></div><div className="ai-window"><b>ContextIQ</b><span>Ask anything about your files</span><i>⌕</i></div><div className="ai-chip">AI / READY</div></>}
+            </div>}
+            <div className="project-info">
+              <div className="project-meta"><span>0{project.id} / Featured</span><span className={`accent-${project.accent}`}>{project.shortTitle || "AI wellness assistant"}</span></div>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <div className="project-tags">{project.technologies.map((technology) => <span key={technology}>#{technology}</span>)}</div>
+              <div className="project-actions">
+                {project.live && <a href={project.live} target="_blank" rel="noreferrer" className="project-link project-live">Live demo <span>↗</span></a>}
+                <a href={project.github} target="_blank" rel="noreferrer" className="project-link">GitHub <span>↗</span></a>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

@@ -5,38 +5,30 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 text-white fixed w-full top-0 left-0 shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        {/* Logo */}
-        <div className="text-2xl font-bold text-indigo-500">Omkar Bondge</div>
+    <nav className="nav-bar">
+      <div className="nav-inner">
+        <a href="#home" className="wordmark"><span>OB</span><strong>Omkar Bondge</strong></a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          <Link to="home" smooth={true} duration={500} className="hover:text-indigo-400 cursor-pointer">
-            Home
-          </Link>
-          <Link to="about" smooth={true} duration={500} className="hover:text-indigo-400 cursor-pointer">
-            About
-          </Link>
-          <Link to="projects" smooth={true} duration={500} className="hover:text-indigo-400 cursor-pointer">
-            Projects
-          </Link>
-          <Link to="contact" smooth={true} duration={500} className="hover:text-indigo-400 cursor-pointer">
-            Contact
-          </Link>
+        <div className="nav-links">
+          <Link to="about" smooth={true} duration={500}>About</Link>
+          <Link to="projects" smooth={true} duration={500}>Selected work</Link>
+          <Link to="contact" smooth={true} duration={500}>Contact</Link>
+          <a href="https://github.com/Omkar-b07" target="_blank" rel="noreferrer" className="nav-github">GitHub ↗</a>
         </div>
 
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white focus:outline-none"
+          className="menu-button"
+          aria-label="Toggle navigation"
         >
           {isOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
@@ -45,13 +37,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-800 px-4 py-2 space-y-2">
+        <div className="mobile-menu">
           <Link
             to="home"
             smooth={true}
             duration={500}
             onClick={() => setIsOpen(false)}
-            className="block hover:text-indigo-400"
+            className="mobile-link"
           >
             Home
           </Link>
@@ -60,7 +52,7 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             onClick={() => setIsOpen(false)}
-            className="block hover:text-indigo-400"
+            className="mobile-link"
           >
             About
           </Link>
@@ -69,9 +61,9 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             onClick={() => setIsOpen(false)}
-            className="block hover:text-indigo-400"
+            className="mobile-link"
           >
-            Projects
+            Selected work
           </Link>
           <Link
             to="contact"

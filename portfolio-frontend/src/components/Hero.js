@@ -1,18 +1,27 @@
 import React from "react";
+import profileImage from "../assets/profile-latest.png";
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-r from-[#0f0f0f] to-[#1a1a1a] text-center py-32">
-      <h1 className="text-5xl font-bold mb-4">Hi, I'm Omkar</h1>
-      <p className="text-lg text-gray-400 mb-8">MERN Stack Developer | Building Modern Web Apps</p>
-      <div className="space-x-4">
-        <a href="#projects" className="bg-blue-600 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/50 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-          View Projects
-        </a>
-        <a href="#contact" className="bg-[#1f1f1f] border border-blue-600 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/50 px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-          Contact Me
-        </a>
+    <section id="home" className="hero section-frame">
+      <div className="hero-topline"><span><i className="status-dot" /> Available for opportunities</span><span>Full-stack developer / Pune, India</span></div>
+      <div className="hero-grid">
+        <div className="hero-copy">
+          <p className="eyebrow">Hello, I&apos;m Omkar <span>✳</span></p>
+          <h1>I build software<br /><span>people can use.</span></h1>
+          <p className="hero-description">Full-stack developer focused on thoughtful interfaces, dependable systems, and products that solve real problems.</p>
+          <div className="hero-actions">
+            <a href="#projects" className="button button-primary">See my work <span>↓</span></a>
+            <a href="mailto:omkarbondge07@gmail.com" className="text-link">Start a conversation <span>↗</span></a>
+          </div>
+        </div>
+        <div className="hero-profile">
+          <div className="profile-orbit orbit-one" /><div className="profile-orbit orbit-two" />
+          <div className="profile-frame"><img src={profileImage} alt="Omkar Bondge" /><span className="profile-tag">BUILDING FROM<br /><strong>IDEA → IMPACT</strong></span></div>
+          <span className="profile-number">01 / 04</span>
+        </div>
       </div>
+      <div className="hero-footer"><span>Currently learning / building / shipping</span><span>Scroll to explore ↓</span></div>
     </section>
   );
 };
